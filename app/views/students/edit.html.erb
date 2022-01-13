@@ -1,0 +1,27 @@
+
+
+<div class="container">
+  <h1 class="text-center text-success mt-3">Edit User</h1>
+
+<%= form_with model: @student do |form| %>
+  <div class="text-center">
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+<br/>
+     <div class="text-center">
+    <%= form.label :age %><br>
+    <%= form.text_field :age %>
+     </div>
+<br/>
+  <div class="text-center"> 
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </div>
+<br/>
+  <div class="text-center">
+    <%= form.submit "Update User", class:"btn btn-success" %>
+  </div>
+<% end %>
+
+</div>
