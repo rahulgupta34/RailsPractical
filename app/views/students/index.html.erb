@@ -1,0 +1,33 @@
+<h1 class="text-success text-center mt-3 p-2"> CRUD Operation </h1>
+
+<div class="container">
+
+<%= link_to "Add User", new_student_path,class:"btn btn-primary ml-4 mt-2 mb-3" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Email</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @student.each do |student| %>
+      <th scope="row"><%= student.id %></th>
+      <td><%= student.name %></td>
+      <td><%= student.age %></td>
+      <td><%= student.email %></td>
+      <td><%= link_to "Delete", student_path(student.id),data: {
+                    turbo_method: :delete,turbo_confirm: "Are you sure?" },class:"btn btn-danger" %></td>
+       <td><%= link_to "Edit", edit_student_path(student.id),class:"btn btn-success" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<tr>
+      
+</div>
