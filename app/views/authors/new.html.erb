@@ -6,16 +6,21 @@
         <div class="form-group ">
             <%= form.label :first_name %><br>
             <%= form.text_field :first_name, class:"form-control", placeholder: "Enter Your First Name" %>
+               <% @author.errors.full_messages_for(:first_name).each do |message| %>
+                <p class="text-danger"><%= message %></p>
+              <% end %>
         </div>
       </div>
   </div>
-  
-
+ 
   <div class="row justify-content-center">
       <div class="col-lg-3 mt-3">
         <div class="form-group ">
             <%= form.label :last_name %><br>
             <%= form.text_field :last_name, class:"form-control", placeholder: "Enter Your Last Name" %>
+        <% @author.errors.full_messages_for(:last_name).each do |message| %>
+                <p class="text-danger"><%= message %></p>
+              <% end %>
         </div>
       </div>
   </div>
@@ -25,6 +30,9 @@
         <div class="form-group ">
             <%= form.label :dob %><br>
             <%= form.date_field :dob, class:"form-control" %>
+            <% @author.errors.full_messages_for(:dob).each do |message| %>
+                <p class="text-danger"><%= message %></p>
+              <% end %>
         </div>
       </div>
   </div>
@@ -34,6 +42,9 @@
         <div class="form-group ">
             <%= form.label :email %><br>
             <%= form.email_field :email, class:"form-control", placeholder: "Enter Your Email" %>
+            <% @author.errors.full_messages_for(:email).each do |message| %>
+                <p class="text-danger"><%= message %></p>
+              <% end %>
         </div>
       </div>
   </div>
