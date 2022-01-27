@@ -1,6 +1,6 @@
 class DatasController < ApplicationController
     def index
-         @data = Book.find(params[:id]).author
-         @data1 = Author.find(params[:id]).book
+        #  binding.pry
+         @data = Author.find(params[:id]).books
     end
 end

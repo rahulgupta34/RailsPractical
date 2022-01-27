@@ -4,6 +4,9 @@ class AuthorsController < ApplicationController
   end
   def show
     @author = Author.find(params[:id])
+    # @book = Book.new
+    # @book.author_id = @author.id
+    # @book = Book.new(book_params)
   end
 
   def new
@@ -43,5 +46,10 @@ class AuthorsController < ApplicationController
   def author_params
     params.require(:author).permit(:first_name, :last_name,:dob, :email)
   end
+
+  # private
+  # def book_params
+  #   params.require(:book).permit(:name, :price, :author_id)
+  # end
 
 end

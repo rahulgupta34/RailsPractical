@@ -10,6 +10,11 @@ Rails.application.routes.draw do
    
    resources :books
    
+   resources :authors do
+    resources :books
+   end
+ 
+   get "/books/new/:id", to: "books#new"
    get "/books", to: "books#index"
    get "/joindata/:id", to: "datas#index"
 end
