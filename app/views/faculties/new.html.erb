@@ -1,0 +1,101 @@
+<div class="container">
+<h1 class="text-danger text-center m-3">Add New Faculty</h1>
+<%= form_with model: @faculty do |form| %>
+    <div class="row justify-content-center">
+        <div class="col-lg-3">
+            <div class="form-group">
+            <%= form.label :first_name, "First Name" %>
+            <%= form.text_field :first_name, placeholder: "Enter Your First Name", class:"form-control mt-2", autocomplete: :off %>
+            </div>
+        </div>
+    </div>
+        <% @faculty.errors.full_messages_for(:first_name).each do |message| %>
+          <div class="text-center text-danger"><%= message %></div>
+        <% end %>
+    <div class="row justify-content-center mt-2">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <%= form.label :last_name, "Last Name " %>
+                <%= form.text_field :last_name, placeholder: "Enter Your Last Name", class:"form-control mt-2", autocomplete: :off %>
+            </div>
+        </div>
+    </div>
+    <% @faculty.errors.full_messages_for(:last_name).each do |message| %>
+     <div class="text-center text-danger"><%= message %></div>
+    <% end %>
+
+    <div class="row justify-content-center mt-2">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <%= form.label :mobile, "Phone " %>
+                <%= form.number_field :mobile, placeholder: "Enter Your Phone Number ", class:"form-control mt-2", autocomplete: :off, :maxlength => 10 %>
+            </div>
+        </div>
+    </div>
+
+    <% @faculty.errors.full_messages_for(:mobile).each do |message| %>
+      <div class="text-center text-danger"><%= message %></div>
+    <% end %> 
+
+    <div class="row justify-content-center mt-2">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <%= form.label :email, "Email" %>
+                <%= form.email_field :email, placeholder: "Enter Your Email ", class:"form-control mt-2", autocomplete: :off %>
+            </div>
+        </div>
+    </div>
+
+    <% @faculty.errors.full_messages_for(:email).each do |message| %>
+         <div class="text-center text-danger"><%= message %></div>
+    <% end %>
+
+    <div class="row justify-content-center mt-2">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <%= form.label :dob, "Dob" %>
+                <%= form.date_field :dob, placeholder: "Enter Your DOB ", class:"form-control mt-2" %>
+            </div>
+        </div>
+    </div>
+
+    <% @faculty.errors.full_messages_for(:dob).each do |message| %>
+         <div class="text-center text-danger"><%= message %></div>
+    <% end %>
+
+    <div class="row justify-content-center mt-2">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <%= form.label :designation, "Department" %>
+                <%= form.select :designation, ['select','Ass_Prof', 'Prof'], {}, class: "form-control mt-2" %>
+            </div>
+        </div>
+    </div>
+
+    <% @faculty.errors.full_messages_for(:designation).each do |message| %>
+         <div class="text-center text-danger"><%= message %></div>
+    <% end %>
+
+    <div class="row justify-content-center mt-2">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <%= form.label :terms_of_usage, " Terms Of Usages" %>
+                <%= form.check_box :terms_of_usage %>
+            </div>
+        </div>
+    </div>
+
+    <% @faculty.errors.full_messages_for(:terms_of_usage).each do |message| %>
+          <div class="text-center text-danger"><%= message %></div>
+    <% end %>
+
+    <div class="row justify-content-center mt-2">
+        <div class="col-lg-3">
+            <div class="form-group">
+            <%= form.submit "Add New Faculty ", class: "btn btn-success mt-2" %>
+            </div>
+        </div>
+    </div>
+
+<% end %>
+</div>
