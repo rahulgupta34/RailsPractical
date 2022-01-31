@@ -1,0 +1,39 @@
+<h1 class="text-center text-success m-3">Authors Data</h1>
+
+<%= link_to " Show Author Books ", "/books", class:"btn btn-info m-3" %>
+
+<%= link_to " Add New Author ", new_author_path, class:"btn btn-info m-3" %>
+
+<div class="container-fluid">
+    <table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First_Name</th>
+      <th scope="col">Last_Name</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Email</th>
+      <th scope="col">Show</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @authors.each do |author| %>
+         <tr>
+            <th scope="row"><%= author.id %></th>
+            <td><%= author.first_name %></td>
+            <td><%= author.last_name %></td>
+            <td><%= author.dob %></td>
+            <th><%= author.email %></th>
+            <td><%= link_to "Show", author_path(author.id),class:"btn btn-success" %></td>
+            <td> <a href="/joindata/<%= author.id %>" class="btn btn-primary">Show Books</a> </td>
+            <td><%= link_to "Edit", edit_author_path(author.id),class:"btn btn-info" %></td>
+            <td><%= link_to "Delete", author_path(author.id), data: {turbo_method: :delete, turbo_confirm: "Are You Sure Want To Delete Author"}, class:"btn btn-danger" %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+

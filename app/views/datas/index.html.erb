@@ -1,0 +1,26 @@
+
+
+
+
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  <% @data.each do |books| %>
+    <tr>
+      <th scope="row"><%= books.id %></th>
+      <th scope="row"><%= books.name %></th>
+      <td><%= books.price %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
