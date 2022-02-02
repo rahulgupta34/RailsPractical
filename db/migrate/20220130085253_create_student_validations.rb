@@ -1,6 +1,6 @@
-class CreateStudent1s < ActiveRecord::Migration[7.0]
+class CreateStudentValidations < ActiveRecord::Migration[7.0]
   def change
-    create_table :student1s do |t|
+    create_table :student_validations do |t|
       t.string :first_name
       t.string :last_name
       t.integer :phone

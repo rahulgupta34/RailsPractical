@@ -1,0 +1,47 @@
+<h1 class="text-center text-primary m-3">Hello <%= @student1.first_name %></h1>
+
+<div class="container">
+     <div class="row justify-content-center m-5">
+           <div class="col-lg-2">
+               <b>First Name </b>
+           </div>
+           <div class="col-lg-2">
+              <%= @student1.first_name %>
+           </div>
+     </div>
+     <div class="row justify-content-center m-5">
+           <div class="col-lg-2">
+               <b>Last Name </b>
+           </div>
+           <div class="col-lg-2">
+              <%= @student1.last_name %>
+           </div>
+     </div>
+      <div class="row justify-content-center m-5">
+           <div class="col-lg-2">
+               <b>DOB </b>
+           </div>
+           <div class="col-lg-2">
+              <%= @student1.dob %>
+           </div>
+     </div>
+      <div class="row justify-content-center m-5">
+           <div class="col-lg-2">
+               <b>Email </b>
+           </div>
+           <div class="col-lg-2">
+              <%= @student1.email %>
+           </div>
+     </div>
+
+    <div class="row justify-content-center m-5">
+           <div class="col-lg-2">
+              <%= link_to "Back", student_validations_path, class:"btn btn-success" %>
+           </div>
+     </div>
+
+</div>
+
+
+
+

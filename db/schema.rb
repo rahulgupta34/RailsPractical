@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2022_01_30_135134) do
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable"
   end
 
-  create_table "student1s", force: :cascade do |t|
+  create_table "student_validations", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.integer "phone"
