@@ -1,0 +1,38 @@
+<h1 class="text-center text-success m-4"> Student1s Data </h1>
+
+<%= link_to "Add New Student ", new_student_validation_path, class:"btn btn-success m-4" %>
+
+<div class="container">
+     <table class="table">
+  <thead class="thead-dark shadow">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Email</th>
+      <th scope="col">Department</th>
+      <th scope="col">Show</th>
+      <th scope="col">Delete</th>
+       <th scope="col">Edit</th>
+  </thead>
+  <tbody>
+  <% @student1s.each do |student1| %>
+    <tr>
+      <td scope="row"><%= student1.id %></td>
+      <td><%= student1.first_name %></td>
+      <td><%= student1.last_name %></td>
+      <td><%= student1.dob %></td>
+      <td><%= student1.phone %></td>
+      <td><%= student1.email %></td>
+      <td><%= student1.department %></td>
+       <td scope="col"><%= link_to "Show", student_validation_path(student1.id), class:"btn btn-primary" %></td>
+        <td scope="col"><%= link_to "Delete",student_validation_path(student1.id), data: {turbo_method: :delete, turbo_confirm: "Are You Sure Want To Delete Author"}, class:"btn btn-danger" %></td>
+         <td scope="col"><%= link_to "Edit", edit_student_validation_path(student1.id), class:"btn btn-success" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>

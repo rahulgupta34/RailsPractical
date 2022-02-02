@@ -1,0 +1,40 @@
+<h1 class="text-center text-success m-4"> Faculty Data </h1>
+
+<%= link_to " Add Faculty ", new_faculty_path, class:"btn btn-success m-4" %>
+
+<div class="container">
+<table class="table">
+<thead class="thead-dark shadow">
+<tr>
+<th scope="col">Id</th>
+<th scope="col">First Name</th>
+<th scope="col">Last Name</th>
+<th scope="col">DOB</th>
+<th scope="col">Mobile</th>
+<th scope="col">Email</th>
+<th scope="col">Designation</th>
+<th scope="col">Show</th>
+<th scope="col">Delete</th>
+<th scope="col">Edit</th>
+
+</thead>
+<tbody>
+<% @faculties.each do |faculty| %>
+<tr>
+<td scope="row"><%= faculty.id %></td>
+<td><%= faculty.first_name %></td>
+<td><%= faculty.last_name %></td>
+<td><%= faculty.dob %></td>
+<td><%= faculty.mobile %></td>
+<td><%= faculty.email %></td>
+<td><%= faculty.designation %></td>
+ <td scope="col"><%= link_to "Show", faculty_path(faculty.id), class:"btn btn-primary" %></td>
+ <td scope="col"><%= link_to "Delete", faculty_path(faculty.id), data: {turbo_method: :delete, turbo_confirm: "Are You Sure Want To Delete Author"}, class:"btn btn-danger" %></td>
+ <td scope="col"><%= link_to "Edit", edit_faculty_path(faculty.id), class:"btn btn-success" %></td>
+        
+</tr>
+<% end %>
+</tbody>
+</table>
+
+</div>

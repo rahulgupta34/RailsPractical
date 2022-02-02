@@ -1,0 +1,66 @@
+<h1 class="text-center text-primary m-3">Hello <%= @author.first_name %></h1>
+
+<div class="container">
+     <div class="row justify-content-center m-5">
+           <div class="col-lg-2">
+               <b>First Name </b>
+           </div>
+           <div class="col-lg-2">
+              <%= @author.first_name %>
+           </div>
+     </div>
+     <div class="row justify-content-center m-5">
+           <div class="col-lg-2">
+               <b>Last Name </b>
+           </div>
+           <div class="col-lg-2">
+              <%= @author.last_name %>
+           </div>
+     </div>
+      <div class="row justify-content-center m-5">
+           <div class="col-lg-2">
+               <b>DOB </b>
+           </div>
+           <div class="col-lg-2">
+              <%= @author.dob %>
+           </div>
+     </div>
+      <div class="row justify-content-center m-5">
+           <div class="col-lg-2">
+               <b>Email </b>
+           </div>
+           <div class="col-lg-2">
+              <%= @author.email %>
+           </div>
+     </div>
+</div>
+
+<%= link_to "Back", root_path, class: "justify-content-center btn btn-primary", style: "margin-left:500px;" %>
+
+<h1 class="text-center text-success m-5"> Add Author Books </h1>
+
+<%= form_with model: [@author,@author.books.build] do |form| %>
+<div class="row justify-content-center">
+<div class="col-lg-3 ">
+<div class="form-group ">
+<%= form.label :name %><br>
+<%= form.text_field :name, class:"form-control", placeholder: "Enter Your Book Name" %>
+</div>
+</div>
+</div>
+
+<div class="row justify-content-center">
+<div class="col-lg-3 mt-3">
+<div class="form-group ">
+<%= form.label :price %><br>
+<%= form.number_field :price, class:"form-control", placeholder: "Enter Your Price" %>
+</div>
+</div>
+</div>
+
+<div class="text-center mt-3">
+<%= form.submit "Add Book", class:"btn btn-success" %>
+</div>
+<% end %>
+
+

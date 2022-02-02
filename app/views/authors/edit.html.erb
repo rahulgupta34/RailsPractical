@@ -1,0 +1,44 @@
+<h1 class="text-center m-3 text-danger">Edit <%= @author.first_name %> </h1>
+
+<%= form_with model: @author do |form| %>
+  <div class="row justify-content-center">
+      <div class="col-lg-3 ">
+        <div class="form-group ">
+            <%= form.label :first_name %><br>
+            <%= form.text_field :first_name, class:"form-control", placeholder: "Enter Your First Name" %>
+        </div>
+      </div>
+  </div>
+  
+
+  <div class="row justify-content-center">
+      <div class="col-lg-3 mt-3">
+        <div class="form-group ">
+            <%= form.label :last_name %><br>
+            <%= form.text_field :last_name, class:"form-control", placeholder: "Enter Your Last Name" %>
+        </div>
+      </div>
+  </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-3 mt-3">
+        <div class="form-group ">
+            <%= form.label :dob %><br>
+            <%= form.date_field :dob, class:"form-control" %>
+        </div>
+      </div>
+  </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-3 mt-3">
+        <div class="form-group ">
+            <%= form.label :email %><br>
+            <%= form.email_field :email, class:"form-control", placeholder: "Enter Your Email" %>
+        </div>
+      </div>
+  </div>
+
+  <div class="text-center mt-3">
+    <%= form.submit "Edit Author", class:"btn btn-success" %>
+  </div>
+<% end %>
